@@ -1,0 +1,148 @@
+/*--------------------------------------------------------------
+  HTML要素
+--------------------------------------------------------------*/
+
+* {
+  margin: 0;
+}
+
+h1,
+p {
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+label {
+  cursor: pointer;
+}
+
+button,
+input:not([type="checkbox"]),
+select {
+  box-sizing: border-box;
+  min-height: 2em;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+  汎用的な便利クラス
+--------------------------------------------------------------*/
+
+/*------------------------------
+  程よく幅を保つ領域
+------------------------------*/
+
+.u-container {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: min(400px, 100%);
+}
+
+/*------------------------------
+  標準的な外部余白を持つもの
+------------------------------*/
+
+.u-margin {
+  margin-top: 1em;
+}
+
+/*------------------------------
+  名前付きの格好良い領域
+------------------------------*/
+
+.u-section {
+  display: grid;
+}
+
+.u-sectionTitle {
+  color: gray;
+  font-size: 0.7rem;
+}
+
+/*------------------------------
+  枠付きの一覧
+------------------------------*/
+
+.u-boxListItem {
+  border-color: lightgray;
+  border-style: solid;
+  border-width: 1px;
+}
+  .u-boxListItem + .u-boxListItem {
+    border-top-width: 0;
+  }
+
+/*------------------------------
+  ただのテキストに見えて、カーソルを載せるとかで枠が出るボタン
+------------------------------*/
+
+.u-button-ghost {
+  background-color: transparent;
+  border-color: transparent;
+}
+  .u-button-ghost:where(:hover, :focus-visible) {
+    background-color: #f0f0f0;
+  }
+
+/*--------------------------------------------------------------
+  特定の部品
+--------------------------------------------------------------*/
+
+/*------------------------------
+  追加フォーム
+------------------------------*/
+
+.NewTaskForm {
+  display: grid;
+  grid-template-columns: auto 4em;
+}
+
+/*--------------------------------
+  コントロールパネル
+--------------------------------*/
+
+.ControlPanel {
+  display: grid;
+  gap: 1rem;
+  grid-template:
+    "newTask newTask" auto
+    "sort    filter " auto
+    / 1fr 1fr;
+}
+
+/*--------------------------------
+  一覧項目
+--------------------------------*/
+
+.TaskItem {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: auto 2em 2em;
+  min-height: 2.5em;
+}
+
+.TaskItem-label {
+  display: grid;
+  grid-template-columns: 2em auto;
+}
+  .TaskItem-label:where(:hover, :focus-within) {
+    background-color: #f9f9f9;
+  }
+
+.TaskItem-checkboxCell {
+  display: grid;
+  place-items: center;
+}
+
+.TaskItem-titleCell {
+  padding: 0.5em 0;
+}

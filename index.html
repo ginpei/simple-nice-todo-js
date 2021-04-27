@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>やることリストアプリ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="u-container">
+    <h1 class="appName">やることリストアプリ</h1>
+    <div class="ControlPanel u-margin">
+      <div class="u-section" style="grid-area: newTask;">
+        <div class="u-sectionTitle">新規：</div>
+        <div class="u-sectionContent">
+          <form id="inputForm" class="NewTaskForm">
+            <input type="text" name="title" id="titleInput" required>
+            <button>追加</button>
+          </form>
+        </div>
+      </div>
+      <div class="u-section" style="grid-area: sort;">
+        <span class="u-sectionTitle">並び替え：</span>
+        <select id="sortType">
+          <option value="createdAt-up">登録順</option>
+          <option value="createdAt-down">登録順 ↩</option>
+          <option value="name-up">名前順</option>
+          <option value="name-down">名前順 ↩</option>
+        </select>
+      </div>
+      <div class="u-section" style="grid-area: filter;">
+        <span class="u-sectionTitle">フィルター：</span>
+        <label>
+          <input type="checkbox" id="hideComplete">
+          完了したものを隠す
+        </label>
+      </div>
+    </div>
+    <div id="taskList" class="u-margin"></div>
+    <p>
+      <a href="https://github.com/ginpei/simple-nice-todo-js">🚀 GitHub でソースコードを見る</a>
+    </p>
+  </main>
+  <script src="./scripts.js"></script>
+</body>
+</html>
