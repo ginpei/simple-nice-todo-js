@@ -205,7 +205,7 @@ function renderSortType(sortType) {
  * 隠す設定を描画する。
  * @param {boolean} hideComplete
  */
- function renderHideComplete(hideComplete) {
+function renderHideComplete(hideComplete) {
   elHideComplete.checked = hideComplete;
 }
 
@@ -233,7 +233,7 @@ function resetNewTaskForm() {
  * フォームの入力値を返す。
  * @returns {TaskRecord}
  */
- function getNewTaskInput() {
+function getNewTaskInput() {
   /** @type {HTMLInputElement} */
   const elTitle = ($("[name='title']", elForm));
   const title = elTitle.value;
@@ -264,7 +264,7 @@ function createElTask(task) {
   el.append(elLabel);
 
   const elCheckboxWrapper = document.createElement("span");
-  elCheckboxWrapper.classList.add("TaskItem-checkboxCell")
+  elCheckboxWrapper.classList.add("TaskItem-checkboxCell");
   elLabel.append(elCheckboxWrapper);
 
   const elCheckbox = document.createElement("input");
@@ -274,7 +274,7 @@ function createElTask(task) {
   elCheckboxWrapper.append(elCheckbox);
 
   const elTitle = document.createElement("span");
-  elTitle.classList.add("TaskItem-titleCell")
+  elTitle.classList.add("TaskItem-titleCell");
   elTitle.textContent = task.title;
   elLabel.append(elTitle);
 
@@ -345,9 +345,9 @@ function load() {
 function createInitialStore() {
   return {
     hideComplete: false,
-  
+
     sortType: "createdAt-down",
-  
+
     tasks: [
       {
         createdAt: Date.now(),
